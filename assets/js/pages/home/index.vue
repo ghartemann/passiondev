@@ -1,20 +1,92 @@
 <template>
-    <div id="wp-bg" class="tw-w-full tw-min-h-screen tw-flex tw-items-center tw-justify-center">
-        <div class="tw-rounded-3xl tw-p-8 tw-text-center tw-bg-clip-padding tw-backdrop-filter tw-backdrop-blur-lg tw-bg-opacity-10 tw-bg-gray-900 tw-flex tw-flex-col tw-gap-2 tw-select-none">
-            <h1 class="tw-text-6xl tw-font-semibold tw-text-white">Symfony 7 | Vue 3</h1>
-            <h2 class="tw-text-4xl tw-font-semibold tw-text-white">Vite | Tailwind</h2>
-            <div class="tw-text-2xl tw-text-white">L'incroyable template v1.4</div>
+    <div id="wp-bg" class="tw-w-full tw-min-h-screen tw-flex tw-justify-center tw-py-10">
+        <h1 class="tw-fixed tw-text-white tw-text-3xl tw-left-10">
+            <span
+                v-for="(letter, index) in 'passion.dev'.split('')"
+                class="anim-anniversaire"
+                :style="'animation-delay:' + (.5 + index / 10) + 's'"
+            >
+                {{ letter }}
+            </span>
+        </h1>
+
+        <div class="tw-w-[72rem] tw-space-y-8">
+            <div class="tw-flex">
+                <div>
+                    <div v-for="lineNumber in 200"
+                         :id="lineNumber.toString()"
+                         class="tw-text-end tw-text-white/30 tw-pr-3 tw-mr-8 tw-border-r tw-border-white/30 tw-font-mono"
+                    >
+                        {{ lineNumber }}
+                    </div>
+                </div>
+
+                <div>
+                    <p class="paragraph">
+                        blabla
+                    </p>
+
+                    <p class="paragraph">
+                        blablablou
+                        <sup @click="goTo('ref1')" class="tw-cursor-pointer">1</sup>
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="tw-font-semibold tw-text-lg tw-text-white">Références</h2>
+
+                <ol>
+                    <li id="ref1">
+                        <sup>1</sup> test
+                        <span class="tw-text-xs" @click="goTo(1)">Retour</span>
+                    </li>
+                </ol>
+            </div>
         </div>
     </div>
 </template>
 
-<script setup lang="ts">
-
+<script setup>
+function goTo(id) {
+    window.location = `#${id}`;
+}
 </script>
 
 <style scoped>
 #wp-bg {
-    background-image: url('/images/wp.jpg');
+    background-image: linear-gradient(to right, #434343 0%, #000000 100%);
     @apply tw-bg-cover tw-bg-center tw-bg-no-repeat tw-bg-fixed tw-bg-gray-300;
+}
+
+.paragraph {
+    @apply tw-text-white tw-mb-6;
+}
+
+li {
+    @apply tw-text-white;
+}
+
+* {
+    @apply tw-font-mono;
+}
+
+.anim-anniversaire {
+    animation: move-text 1s infinite;
+    position: relative;
+}
+
+@keyframes move-text {
+    0% {
+        bottom: -.1em;
+    }
+
+    50% {
+        bottom: .1em;
+    }
+
+    100% {
+        bottom: 0;
+    }
 }
 </style>
