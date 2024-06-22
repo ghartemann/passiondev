@@ -22,13 +22,18 @@
                 </div>
 
                 <div>
-                    <p class="paragraph">
-                        blabla
+                    <p>
+                        Curiosité, passion : ces mots apparaissent si souvent sur LinkedIn, dans les posts des
+                        "influenceurs dev" ou dans les offres d'emploi, qu'on en vient à se demander ce qui fait du
+                        métier de développeur une activité si captivante, si stimulante — et parfois si inaccessible.
                     </p>
 
-                    <p class="paragraph">
-                        blablablou
-                        <sup @click="goTo('ref1')" class="tw-cursor-pointer">1</sup>
+                    <p>
+                        bla bla<sup @click="goTo('ref1')" class="tw-cursor-pointer">1</sup>
+                    </p>
+
+                    <p>
+                        blou
                     </p>
                 </div>
             </div>
@@ -59,8 +64,12 @@ function goTo(id) {
     @apply tw-bg-cover tw-bg-center tw-bg-no-repeat tw-bg-fixed tw-bg-gray-300;
 }
 
-.paragraph {
+p {
     @apply tw-text-white tw-mb-6;
+}
+
+sup {
+    @apply tw-text-yellow-400 tw-ml-1;
 }
 
 li {
