@@ -23,9 +23,7 @@
 
                 <div>
                     <p>
-                        Curiosité, passion : ces mots apparaissent si souvent sur LinkedIn, dans les posts des
-                        "influenceurs dev" ou dans les offres d'emploi, qu'on en vient à se demander ce qui fait du
-                        métier de développeur une activité si captivante, si stimulante — et parfois si inaccessible.
+                        bla
                     </p>
 
                     <p>
